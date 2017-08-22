@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>This is the Home Page</title>
+  </head>
+  <body>
+    <div class="wordHolder">
+      <p class="word">{{ underScored }}</p>
+      {{ #remaining }}
+      <p>{{ remaining }}</p>
+      {{ /remaining }}
+      {{ ^remaining }}
+      <p>GAME OVER LOSER!</p>
+      <form class="" action="/newGame" method="post">
+        <input type="submit" value="Next Game">
+      </form>
+      {{ /remaining }}
+      {{ #notGuessed }}
+      {{ . }}
+      {{ /notGuessed }}
+
+      {{ #duplicate }}
+        <p>ALREADY GUESSED THAT SUCKA!</p>
+      {{ /duplicate }}
+
+      {{ #winner }}
+        <p>Congrats you WIN!</p>
+        <form class="" action="/newGame" method="post">
+          <input type="submit" value="Next Game">
+        </form>
+      {{ /winner }}
+
+      {{ #invalid }}
+      <p class="invalid">INVALID GUESS PLEASE GUESS ONLY ONE LETTER!!</p>
+      {{ /invalid }}
+
+    </div>
+<form class="" action="/" method="post">
+  <input type="text" name="guess" placeholder="please guess a letter">
+  <input type="submit" value="Guess">
+</form>
+    <script src="/client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  background-color: lawngreen;
+}
+
+div.wordHolder {
+  background-color: red;
+  height: 200px;
+}
+
+p.word {
+  font-size: 200%;
+  margin:auto;
+}
+
+p.invalid {
+  font-size: 300%;
+}
